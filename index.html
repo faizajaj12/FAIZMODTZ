@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAIZMODZ</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#000;
+    color:#0ff;
+}
+
+/* LOADING */
+#loading {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    z-index:999;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position:fixed;
+    top:0;
+    left:-220px;
+    width:220px;
+    height:100%;
+    background:#000;
+    border-right:2px solid #0ff;
+    transition:0.3s;
+    padding-top:60px;
+    z-index:200;
+}
+
+.sidebar a {
+    display:block;
+    color:#0ff;
+    padding:12px;
+    text-decoration:none;
+    border-bottom:1px solid #0ff;
+}
+
+.sidebar a:hover {
+    background:#0ff;
+    color:black;
+}
+
+/* TOGGLE */
+.toggle-btn {
+    position:fixed;
+    top:10px;
+    left:10px;
+    font-size:20px;
+    background:#0ff;
+    color:black;
+    padding:8px;
+    cursor:pointer;
+    z-index:300;
+}
+
+/* LOGO */
+.logo {
+    position:fixed;
+    top:10px;
+    right:10px;
+    z-index:200;
+}
+
+.logo img {
+    height:40px;
+}
+
+/* CONTENT */
+.content {
+    margin-top:60px;
+    padding:20px;
+}
+
+/* CARD */
+.card {
+    background:#111;
+    border:1px solid #0ff;
+    padding:10px;
+    margin:10px;
+    display:inline-block;
+    width:200px;
+    border-radius:10px;
+}
+
+.card img {
+    width:100%;
+}
+
+select, input {
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+button {
+    background:#0ff;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+#timer {
+    font-size:20px;
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading">Loading FAIZMODZ...</div>
+
+<!-- TOGGLE -->
+<div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+    <a onclick="showPage('home')">🛒 Beranda</a>
+    <a onclick="showPage('home')">🏷️ Daftar Harga</a>
+    <a onclick="showPage('lacak')">📩 Lacak Transaksi</a>
+    <a onclick="showPage('kalkulator')">🧮 Kalkulator</a>
+    <a onclick="resetLicense()">♻️ Reset License</a>
+    <a href="https://youtube.com/@fizx_official?si=iHbDlYweH34XXIe5" target="_blank">🌐 Yutub</a>
+</div>
+
+<!-- LOGO -->
+<div class="logo">
+<img src="https://www.image2url.com/r2/default/images/1777457861208-89e92fef-defc-46d2-a882-69d041ef192c.png">
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- HOME -->
+<div id="home">
+<h1>FAIZMODZ - Produk</h1>
+
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-04-29-d01144b7-50f0-4514-afa4-5e60a7661b9f.jpg">
+<h3>Panel VIP Ellostore</h3>
+<select id="produk1">
+<option value="">-- Pilih Paket --</option>
+<option value="Panel VIP Ellostore - 3Hari Rp15.000">3Hari Rp15.000</option>
+<option value="Panel VIP Ellostore - 7Hari Rp25.000">7Hari Rp25.000</option>
+<option value="Panel VIP Ellostore - 1Bulan Rp35.000">1Bulan Rp35.000</option>
+<option value="Panel VIP Ellostore - Permanen Rp50.000">Permanen Rp50.000</option>
+</select>
+<button onclick="beli('produk1')">Beli</button>
+</div>
+
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-04-29-ab03d34e-dbd8-48b6-8e75-b145425c1e6a.png">
+<h3>Panel VIP Modtz BR</h3>
+<select id="produk2">
+<option value="">-- Pilih Paket --</option>
+<option value="Panel VIP Modtz BR - 3Hari Rp25.000">3Hari Rp25.000</option>
+<option value="Panel VIP Modtz BR - 7Hari Rp50.000">7Hari Rp50.000</option>
+<option value="Panel VIP Modtz BR - 1Bulan Rp100.000">1Bulan Rp100.000</option>
+<option value="Panel VIP Modtz BR - Permanen Rp250.000">Permanen Rp250.000</option>
+</select>
+<button onclick="beli('produk2')">Beli</button>
+</div>
+
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-04-29-b79b0e49-a37c-411c-975d-65f4c4e06a58.jpg">
+<h3>Badan Hs</h3>
+<select id="produk3">
+<option value="">-- Pilih Paket --</option>
+<option value="Badan Hs - Rp35.000">Rp35.000</option>
+</select>
+<button onclick="beli('produk3')">Beli</button>
+</div>
+
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-04-29-79677fdd-e9c5-4ab1-8d83-1f1867736b36.jpg">
+<h3>Hologram VIP</h3>
+<select id="produk4">
+<option value="">-- Pilih Paket --</option>
+<option value="Hologram VIP - Rp15.000">Rp15.000</option>
+</select>
+<button onclick="beli('produk4')">Beli</button>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div id="form" style="display:none;">
+<h2>Isi Data</h2>
+<input type="text" id="nama" placeholder="Nama">
+<input type="text" id="wa" placeholder="Nomor WhatsApp">
+<button onclick="bayar()">Lanjut Bayar</button>
+</div>
+
+<!-- BAYAR -->
+<div id="bayar" style="display:none;">
+<h2>Scan QRIS</h2>
+<img src="https://cdn.phototourl.com/free/2026-04-29-a38b3739-5d35-447f-b553-76903eba2d61.jpg" width="200">
+<p id="timer">60</p>
+</div>
+
+<!-- LACAK -->
+<div id="lacak" style="display:none;">
+<h2>Lacak Transaksi</h2>
+<input placeholder="Masukkan ID">
+<button onclick="alert('Transaksi ditemukan (simulasi)')">Cek</button>
+</div>
+
+<!-- KALKULATOR -->
+<div id="kalkulator" style="display:none;">
+<h2>Kalkulator</h2>
+<input id="calc">
+<button onclick="hitung()">Hitung</button>
+<p id="hasil"></p>
+</div>
+
+</div>
+
+<script>
+// LOADING
+setTimeout(()=>{
+    document.getElementById("loading").style.display="none";
+},3000);
+
+// SIDEBAR
+function toggleSidebar(){
+    let s = document.getElementById("sidebar");
+    s.style.left = (s.style.left === "0px") ? "-220px" : "0px";
+}
+
+// NAV
+function showPage(page){
+    document.querySelectorAll(".content > div").forEach(e=>e.style.display="none");
+    document.getElementById(page).style.display="block";
+    toggleSidebar();
+}
+
+// PRODUK
+let produkDipilih = "";
+
+function beli(id){
+    let val = document.getElementById(id).value;
+    if(val===""){
+        alert("Pilih paket dulu!");
+        return;
+    }
+    produkDipilih = val;
+    showPage('form');
+}
+
+// BAYAR
+function bayar(){
+    let nama=document.getElementById("nama").value;
+    let wa=document.getElementById("wa").value;
+
+    if(nama==""||wa==""){
+        alert("Isi data dulu!");
+        return;
+    }
+
+    showPage('bayar');
+
+    let waktu=60;
+    let t=setInterval(()=>{
+        waktu--;
+        document.getElementById("timer").innerText=waktu;
+        if(waktu<=0){
+            clearInterval(t);
+            alert("Waktu habis");
+            location.reload();
+        }
+    },1000);
+
+    setTimeout(()=>{
+        let pesan=`Halo Admin, saya sudah bayar
+Produk: ${produkDipilih}
+Nama: ${nama}
+WA: ${wa}`;
+        window.open(`https://wa.me/6287896761663?text=${encodeURIComponent(pesan)}`);
+    },5000);
+}
+
+// RESET
+function resetLicense(){
+    alert("License berhasil di reset (simulasi)");
+}
+
+// KALKULATOR
+function hitung(){
+    let v=document.getElementById("calc").value;
+    document.getElementById("hasil").innerText=eval(v);
+}
+</script>
+
+</body>
+</html>
